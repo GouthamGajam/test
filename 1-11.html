@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .shape {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            border: 5px solid black;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            border: 5px solid black;
+            border-radius: 50%;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid aquamarine;
+        }
+
+        .rectangle {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+
+        .oval {
+            width: 150px;
+            height: 75px;
+            background-color: aquamarine;
+            border-radius: 75px / 37.5px;
+        }
+
+        .star {
+            position: relative;
+            display: block;
+            color: gold;
+            width: 0;
+            height: 0;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid gold;
+            border-left: 50px solid transparent;
+            transform: rotate(35deg);
+            margin: 20px;
+        }
+
+        .star::before {
+            border-bottom: 40px solid gold;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: -22.5px;
+            left: -32.5px;
+            display: block;
+            content: '';
+            transform: rotate(-35deg);
+        }
+
+        .star::after {
+            position: absolute;
+            display: block;
+            color: gold;
+            top: 1.5px;
+            left: -52.5px;
+            width: 0;
+            height: 0;
+            border-right: 50px solid transparent;
+            border-bottom: 35px solid gold;
+            border-left: 50px solid transparent;
+            transform: rotate(-70deg);
+            content: '';
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            border-radius: 50px 50px 0 0;
+            background: rgb(0, 85, 255);
+        }
+
+        .heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .pacman {
+            position: relative;
+            width: 0;
+            height: 0;
+            border: 50px solid yellow;
+            border-radius: 50%;
+            border-right-color: transparent;
+        }
+
+        .diamond {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            transform: rotate(45deg);
+        }
+
+        .parallelogram {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+            transform: skew(20deg);
+            margin: 20px;
+        }
+
+        .battery {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            border: 5px solid black;
+            border-radius: 5px;
+            margin: 20px;
+        }
+
+        .battery::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            width: 20px;
+            height: 40px;
+            background-color: black;
+            border-radius: 2px;
+        }
+
+        .level {
+            height: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="shape square"></div>
+    <div class="shape circle"></div>
+    <div class="shape triangle"></div>
+    <div class="shape rectangle"></div>
+    <div class="shape oval"></div>
+    <div class="shape star"></div>
+    <div class="shape heart"></div>
+    <div class="shape pacman"></div>
+    <div class="shape diamond"></div>
+    <div class="shape parallelogram"></div>
+    <div class="shape battery">
+        <div class="level" style="width: 50%;"></div>
+    </div>
+</body>
+</html>
